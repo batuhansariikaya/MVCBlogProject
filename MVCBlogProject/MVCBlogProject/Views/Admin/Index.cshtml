@@ -1,0 +1,85 @@
+﻿@using MVCBlogProject.Models
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Blog>
+@{
+    ViewBag.Title = "Bloglar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+
+<body class="hold-transition sidebar-mini">
+	<br />
+	
+	<section class="content">
+	
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">Kategori Listesi</h3>
+				<a href="/Admin/AddCategory" class="btn btn-warning float-right text-white">Yeni Kategori Ekle</a>
+
+			</div>
+			<div class="card-body p-0">
+				<table class="table table-striped projects">
+					<thead>
+						<tr>
+							<th style="width: 1%">
+								#
+							</th>
+							<th style="width: 20%">
+								Başlık
+							</th>
+							<th style="width: 30%">
+								Yazar
+							</th>
+							<th style="width: 8%" class="text-center">
+								Durum
+							</th>
+							<th style="width: 8%" class="text-center">
+								Kategori
+							</th>
+							<th style="width: 20%" class="text-center">
+								İşlemler
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.BlogID</td>
+								<td><a>@item.BlogHeading</a>									
+								</td>
+								<td>
+									@item.AuthorName
+								</td>
+								<td class="project-state">
+									@if (item.BlogStatus == true)
+									{
+										<span class="badge badge-success">Aktif</span>
+									}
+									else
+									{
+										<span class="badge badge-danger">Pasif</span>
+
+									}
+								</td>
+								<td>@item.Category.CategoryName</td>
+								<td class="project-actions text-right">
+									<a class="btn btn-primary btn-sm" href="#"><i class="fas fa-folder"></i>View</a>
+									<a class="btn btn-info btn-sm" href="/Admin/EditCategory/@item.CategoryID"><i class="fas fa-pencil-alt"></i>Düzenle</a>
+									<a class="btn btn-danger btn-sm" href="/Admin/DeleteCategory/@item.CategoryID"><i class="fas fa-trash"></i>Sil</a>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>		
+		</div>		
+	</section>
+</body>
+
+
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("/Index", new { page }))

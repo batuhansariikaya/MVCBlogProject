@@ -1,0 +1,46 @@
+﻿@model MVCBlogProject.Models.Blog
+@{
+    ViewBag.Title = "Blog Güncelleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+<h2>Blog Güncelleme</h2>
+
+<br />
+@using (Html.BeginForm("BlogUpdate", "Admin", FormMethod.Post))
+{
+    <label>ID</label>
+    @Html.TextBoxFor(x => x.BlogID, new { @class = "form-control-file", @readonly = "readonly" })
+    <br />
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.BlogHeading, new { @class = "form-control-file" })
+    <br />
+    <label>Blog Resim URL</label>
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control-file" })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control-file" })
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.BlogDescription, 15, 1, new { @class = "form-control-file", id = "summernote" })
+    <br />
+    <label>Durum</label>
+    @Html.TextBoxFor(x => x.BlogStatus, new { @class = "form-control-file" })
+    <br />
+    <label>Yazar Adı</label>
+    @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control-file" })
+    <br />
+    <label>Kategori</label>
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.v2, new { @class = "form-control-file" })
+    <br />
+
+
+    @*@Html.Label("Açıklama:")
+        @Html.TextAreaFor(x => x.Description, new { @name = "editor", @class = "editor1", @id = "editor", @rows = "10", @cols = "80" })*@
+    <button class="btn btn-primary">Güncelle</button>
+}
+
+
+

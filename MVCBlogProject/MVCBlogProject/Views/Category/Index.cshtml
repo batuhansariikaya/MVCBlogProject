@@ -1,0 +1,61 @@
+﻿@using MVCBlogProject.Models
+@model List<Category>
+@{
+    ViewBag.Title = "Kategoriler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Kategoriler</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Ad</th>
+        <th>Durum</th>
+
+        <th>Güncelle</th>
+        <th>Sil</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.CategoryID</th>
+            <td>@item.CategoryName</td>
+            <td>
+                @if (item.CategoryStatus == true)
+                {
+                    <span class="badge badge-success">Aktif</span>
+                }
+                else
+                {
+
+                    <span class="badge badge-danger">Pasif</span>
+                }
+            </td>
+            @*<td><a style="color:white" href="/Category/CategoryDelete/@item.CategoryID" class="btn btn-danger"><i class="close"></i> Sil</a></td>*@
+            <td><a style="color:white" href="/Category/GetCategory/@item.CategoryID" class="btn btn-success">Güncelle</a></td>
+            @*<td><a style="color:white" href= class="btn btn-secondary">Detaylar</a></td>*@
+            <td>@Html.ActionLink("Sil", "CategoryDelete", new { id = item.CategoryID }, new { @class = "btn btn-danger", onclick = "return confirm('Gerçekten Silmek İstiyor Musunuz?')" })</td>
+        </tr>
+    }
+</table>
+<span type="button" data-toggle="modal" data-target="#Modal1" style="color:white" class="btn btn-primary">Yeni Kategori Ekle</span>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Kategori Ekle</h2>
+            </div>
+            <form method="post" action="/Category/NewCategory">
+                <div class="modal-body">
+                    <label>Kategori Adı</label>
+                    <input type="text" name="CategoryName" class="form-control-file" />
+                    <label>Durum</label>
+                    @*@Html.DropDownListFor(m => m.CategoryStatus.ToString(), (IEnumerable<SelectListItem>)ViewData["data"])*@
+                    <br />
+                    <button class="btn btn-info">Ekle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

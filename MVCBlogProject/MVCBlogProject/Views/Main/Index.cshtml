@@ -1,0 +1,139 @@
+﻿@model MVCBlogProject.Models.MultipleClass
+  
+@{
+    ViewBag.Title = "Ana Sayfa";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="main-banner header-text">
+    <div class="container-fluid">
+        <div class="owl-banner owl-carousel">
+            @foreach (var y in Model.value1)
+            {
+                <div class="item">
+                    <img width="438" height="370" src="@y.BlogImage" alt="">
+                    <div class="item-content">
+                        <div class="main-content">
+                            <div class="meta-category">
+                                <span>@y.Category.CategoryName</span>
+                            </div>
+                            <a href="~/Main/BlogDetails/@y.BlogID"><h4>@y.BlogHeading</h4></a>
+                            <ul class="post-info">
+                                <li><a href="#">@y.AuthorName</a></li>
+                                <li><a href="#">@y.Date.ToShortDateString()</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }        </div>
+    </div>
+</div>
+<!-- Banner Ends Here -->
+
+
+
+<section class="blog-posts">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+               
+                <div class="all-blog-posts">
+                    
+                    <div class="row">
+                       
+                        @foreach (var item in Model.value1)
+                        {
+                            <div class="col-lg-12">
+
+                                <div class="blog-pos t">
+
+                                    <div class="blog-thumb">
+                                        <img width="730" height="322" src="@item.BlogImage" alt="">
+                                    </div>
+                                    <div class="down-content">
+                                        <a href="~/Main/BlogDetails/@item.BlogID"><h4>@item.BlogHeading</h4></a>
+                                        <ul class="post-info">
+                                            <li><a href="#">@item.AuthorName</a></li>
+                                            <li><a href="#">@item.Date.ToShortDateString()</a></li>
+
+                                        </ul>
+                                        <p>@Html.Raw(item.BlogDescription.Substring(0, 100))<i>...</i></p>
+                                        <div class="post-options">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <ul class="post-tags">
+                                                        <li><i class="fa fa-tags"></i></li>
+                                                        <li><h6>@item.Category.CategoryName</h6></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        }
+                        </div>
+                   
+                    </div>
+                
+                </div>
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @*<div class="sidebar-item search">
+                                <form id="search_form" name="gs" method="GET" action="#">
+                                    <input type="text" name="q" class="searchText" placeholder="Blog Ara" autocomplete="on">
+                                    <button class="btn btn-default" type="submit" style="background-color:#f48840; color:white;">Ara</button>
+                                </form>
+                            </div>*@
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="sidebar-item recent-posts">
+                                <div class="sidebar-heading">
+                                    <h2>Son Bloglar </h2>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>
+                                            @foreach (var x in Model.value3)
+                                            {
+
+
+                                                <a href="/Main/BlogDetails/@x.BlogID">
+                                                    <h5>@x.BlogHeading</h5>
+                                                    <span>@x.Date.ToShortDateString()</span>
+                                                </a>
+                                            }
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="sidebar-item tags">
+                                <div class="sidebar-heading">
+                                    <h2>Kategoriler</h2>
+                                </div>
+                                @foreach (var item in Model.value5)
+                                {
+                                    <div class="content">
+                                        <ul>
+                                            <li><a>@item.CategoryName</a></li>
+                                        </ul>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

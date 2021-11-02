@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>@ViewBag.Title | Admin Yönetim Paneli</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/admin/css/style.css">
+</head>
+<body>
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+           
+            <h1><a href="/Admin/Index" class="logo">Admin Yönetim Paneli</a></h1>
+            <ul class="list-unstyled components mb-5">
+                <li>
+                    <a href="/Admin/Index"><span class="fa fa-home mr-2"></span> Bloglar</a>
+                </li>
+                <li>
+                    <a href="/Contact/Message"><span class="fa fa-envelope mr-2"></span> Mesajlar</a>
+                </li>
+                <li>
+                    <a href="/Admin/CommentList"><span class="fa fa-comments mr-2"></span> Yorumlar</a>
+                </li>
+                <li>
+                    <a href="/Category/Index"><span class="fa fa-paper-plane mr-2"></span>Kategoriler</a>
+                </li>
+                <li>
+                    <a href="/About/AboutEdit"><span class="fa fa-info mr-2"></span>Hakkımda</a>
+                </li>
+                <li>
+                    <a href="/Statistics/Index"><span class="fa fa-bar-chart-o mr-2"></span>İstatistikler</a>
+                </li>
+                <li>
+                    <a href="/Main/Index"><span class="fa fa-paper-plane mr-2"></span> Siteye Git</a>
+                </li>
+                <li>
+                    <a href="/Login/LogOut"><span class="fa fa-sign-out mr-2"></span> Çıkış Yap</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            @RenderBody()
+        </div>
+    </div>
+
+    <script src="~/admin/js/jquery.min.js"></script>
+    <script src="~/admin/js/popper.js"></script>
+    <script src="~/admin/js/bootstrap.min.js"></script>
+    <script src="~/admin/js/main.js"></script>
+</body>
+</html>

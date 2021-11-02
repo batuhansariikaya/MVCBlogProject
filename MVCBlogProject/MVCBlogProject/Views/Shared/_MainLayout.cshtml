@@ -1,0 +1,136 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+    <title>@ViewBag.Title |Teknolojiye Dair Her Şey </title>
+
+    
+    <link href="~/template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="~/template/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="~/template/assets/css/templatemo-stand-blog.css">
+    <link rel="stylesheet" href="~/template/assets/css/owl.css">
+  
+    
+</head>
+
+<body>
+
+    <header class="">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container">
+                <a class="navbar-brand" href="/Main/Index"><img height="80"  src="~/template/assets/images/batuson.png" alt="fdfd"/></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Main/Index">
+                                Ana Sayfa
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/About/Index">Hakkımda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Contact/Index">İletişim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="btn1">Projeler</a>
+                        </li>
+
+                        @if (Session["UserName"] != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Admin/Index">@Session["UserName"]</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a class="nav-link" href="/Login/SignIn">Admin Girişi</a>
+                            </li>
+                        }
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="social-icons">
+                        <li><a class="" href="https://www.facebook.com/batuhan.sarikaya.100">Facebook</a></li>
+                        <li><a class="" href="https://twitter.com/skunfuu">Twitter</a></li>
+                        <li><a class="" href="https://www.linkedin.com/in/batuhan-sar%C4%B1kaya-6b9074195/?originalSubdomain=tr">LINKEDIN</a></li>
+                        <li><a class="" href="https://github.com/batuhansariikaya">Github</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <p>
+                            Tüm hakları saklıdır. | Batuhan Sarıkaya @DateTime.Now.Year.ToString()
+                        </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/template/vendor/jquery/jquery.min.js"></script>
+    <script src="~/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="~/template/assets/js/custom.js"></script>
+    <script src="~/template/assets/js/owl.js"></script>
+    <script src="~/template/assets/js/slick.js"></script>
+    <script src="~/template/assets/js/isotope.js"></script>
+    <script src="~/template/assets/js/accordions.js"></script>
+
+    <script language="text/Javascript">
+
+        cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+        function clearField(t) {                   //declaring the array outside of the
+            if (!cleared[t.id]) {                      // function makes it static and global
+                cleared[t.id] = 1;  // you could use true and false, but that's more typing
+                t.value = '';         // with more chance of typos
+                t.style.color = '#fff';
+            }
+        }
+    </script>
+    <script>
+        $('#btn1').click(function () {
+            swal("Here's the title!", "...and here's the text!");
+        });
+    </script>
+</body>
+</html>

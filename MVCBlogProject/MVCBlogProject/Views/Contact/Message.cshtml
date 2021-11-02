@@ -1,0 +1,30 @@
+﻿@using MVCBlogProject.Models
+@model List<Contact>
+@{
+    ViewBag.Title = "Mesajlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Mesajlar</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Mesaj Gönderen</th>
+        <th>Konu</th>
+        <th>Mesaj</th>
+        <th>Mail</th>
+      
+        
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.ContactID</th>
+            <td>@item.ContactName</td>
+            <td>@item.ContactSubject</td>
+            <td>@item.ContactMessage</td>
+            <td>@item.ContactMail</td>
+           
+        </tr>
+    }
+</table>

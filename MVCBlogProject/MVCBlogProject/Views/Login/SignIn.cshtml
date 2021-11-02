@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login V4</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/signin/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/signin/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/signin/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/signin/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/signin/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/signin/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/signin/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/signin/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/signin/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="~/signin/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/signin/css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('~/signin/images/bg-01.jpg');">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                @using(Html.BeginForm("SignIn","Login",FormMethod.Post))
+                {
+                    <span class="login100-form-title p-b-49">
+                        Giriş Yap
+                    </span>
+
+                    <div class="wrap-input100 validate-input m-b-23">
+                        <span class="label-input100">Kullanıcı Adı</span>
+                        <input class="input100" type="text" name="UserName" placeholder="Kullanıcı Adı">
+                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" >
+                        <span class="label-input100">Şifre</span>
+                        <input class="input100" type="password" name="Password" placeholder="Şifre">
+                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                    </div>
+
+
+                  <br />
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn">
+                                Giriş Yap
+                            </button>
+                        </div>
+                    </div>
+
+
+
+
+    }
+            </div>
+        </div>
+    </div>
+
+
+  
+
+    <!--===============================================================================================-->
+    <script src="~/signin/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/signin/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/signin/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/signin/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/signin/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/signin/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/signin/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/signin/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/signin/js/main.js"></script>
+
+</body>
+</html>
+
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+@*@using (Html.BeginForm("SignIn", "Login", FormMethod.Post)) {
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input   class="form-control" name="UserName" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label >Password</label>
+            <input type="password" name="Password" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    }*@

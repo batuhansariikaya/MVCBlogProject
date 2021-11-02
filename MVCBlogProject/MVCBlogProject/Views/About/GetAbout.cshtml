@@ -1,0 +1,19 @@
+﻿@model MVCBlogProject.Models.About
+
+@{
+    ViewBag.Title = "GetAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AboutUpdate", "About", FormMethod.Post))
+{
+    <label>Metin</label>
+    @Html.TextAreaFor(x => x.AboutDescription, 20, 1, new { @class = "form-control-file" });
+    <label>Metin</label>
+    @Html.TextAreaFor(x => x.AboutID, 20, 1, new { @class = "form-control-file" });
+    <label>Metin</label>
+    @Html.TextAreaFor(x => x.AboutStatus, 20, 1, new { @class = "form-control-file" });
+    <label>Metin</label>
+    @Html.TextAreaFor(x => x.ImageURL, 20, 1, new { @class = "form-control-file" });
+    <button class="btn btn-primary">Güncelle</button>
+}

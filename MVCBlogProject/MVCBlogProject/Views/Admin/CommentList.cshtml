@@ -1,0 +1,67 @@
+﻿@using MVCBlogProject.Models
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Comment>
+@{
+    ViewBag.Title = "Yorumlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<h2>Yorumlar</h2>
+<table class="table table-bordered">
+    <tr class="btn-primary">
+        <th>#</th>
+        <th>Kullanıcı Adı</th>
+        <th>Mail</th>
+        <th>Yorum</th>
+        @*<th>Durum</th>*@
+        <th>Yorum Yapılan Blog</th>
+        <th>Sil</th>
+        @*<th>Güncelle</th>*@
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <th>@item.CommentID</th>
+            <td>@item.CommentUserName</td>
+            <td>@item.CommentMail</td>
+            <td>@item.Comments</td>
+            @*<td>
+                @if (item.CommentStatus == true)
+                {
+                    <span class="badge badge-success">Aktif</span>
+                }
+                else
+                {
+                    <span class="badge badge-danger">Pasif</span>
+                }
+            </td>*@
+
+
+
+          
+            <td>@item.Blog.BlogHeading</td>
+            <td><a href="/Admin/CommentDelete/@item.CommentID" class="btn btn-danger "><i class="fa fa-close"></i>Sil</a></td>
+            @*<td><a href="/Admin/CommentUpdate/@item.CommentID" data-toggle="modal"data-target="#Modal1" class="btn btn-danger glyphicon-eye-close">Güncelle</a></td>*@
+            
+        </tr>
+    }
+</table>
+@*<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Güncelle</h2>
+            </div>
+            <form class="">
+                <div class="modal-body">
+                    <label>ID</label>
+                    <input type="text" name="" class="form-control" />
+                    <label>Aktif/Pasif</label>
+                    <input type="checkbox" name="CommentStatus" class="form-control" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>*@
+@Html.PagedListPager((IPagedList)Model,page=>Url.Action("CommentList",new {page}))

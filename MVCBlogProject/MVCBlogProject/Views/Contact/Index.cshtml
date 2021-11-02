@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "İletişim";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="heading-page header-text">
+        <section class="page-heading">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-content">
+                            <h4>İletişim</h4>
+                            <h2>Bana buradan ulaşabilirsiniz</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Banner Ends Here -->
+
+
+    <section class="contact-us">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="down-contact">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="sidebar-item contact-form">
+                                    <div class="sidebar-heading">
+                                        <h2>Mesaj Gönder</h2>
+                                    </div>
+                                    <div class="content">
+                                       @using (Html.BeginForm("Index", "Contact", FormMethod.Post))
+                                        {
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12">
+                                                    <fieldset>
+                                                        <input name="ContactName" type="text" id="name" placeholder="Ad" required="">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12">
+                                                    <fieldset>
+                                                        <input name="ContactMail" type="text" id="email" placeholder="E-mail" required="">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-md-12 col-sm-12">
+                                                    <fieldset>
+                                                        <input name="ContactSubject" type="text" id="subject" placeholder="Konu">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <fieldset>
+                                                        <textarea name="ContactMessage" rows="6" id="message" placeholder="Mesaj" required=""></textarea>
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <fieldset>
+                                                        <button type="submit" id="form-submit" class="main-button">Gönder</button>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                      }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="sidebar-item contact-information">
+                                    <div class="sidebar-heading">
+                                        <h2>İletişim Bilgileri </h2>
+                                    </div>
+                                    <div class="content">
+                                        <ul>
+                                            <li>
+                                                <h5><i>null</i></h5>
+                                                <span>Telefon Numarası </span>
+                                            </li>
+                                            <li>
+                                                <h5>sarikayaa.batuhan@gmail.com</h5>
+                                                <span>E-mail </span>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+
+    
+   
+
+
+
+
+
+@* kategori sayfası true false dropdownliste çekilecek*@

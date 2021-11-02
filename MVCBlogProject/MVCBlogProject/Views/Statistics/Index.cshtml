@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "İstatistikler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="small-box bg-dark">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.totalblogcount</sup></h3>
+                <sup style="font-size:16px; color:white;">Toplam Blog Sayısı</sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="small-box bg-primary">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.totalcategorycount</sup></h3>
+                <sup style="font-size:16px; color:white;">Toplam Kategori Sayısı</sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="small-box bg-success">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.categorynamewiththemosttitle</sup></h3>
+                <sup style="font-size:16px; color:white;">En Popüler Kategori ID</sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="small-box bg-warning">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.activecategories</sup></h3>
+                <sup style="font-size:16px;color:white;  ">Aktif Kategoriler</sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <br /><br /><br /><br /> <br /><br />
+    <div class="col-md-3">
+        <div class="small-box bg-danger">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.pasifcategories</sup></h3>
+                <sup style="font-size:16px;color:white;  ">Pasif Kategoriler</sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="small-box bg-info">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.activeblogs</sup></h3>
+                <sup style="font-size:16px;color:white;  ">Aktif Bloglar</sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="small-box bg-danger">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.pasifblogs</sup></h3>
+                <sup style="font-size:16px;color:white;  ">Pasif Bloglar</sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="small-box bg-secondary">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.totalcommentcount</sup></h3>
+                <sup style="font-size:16px;color:white;  ">Toplam Yorum Sayısı </sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <br /><br /><br /><br /> <br /><br />
+    <div class="col-md-3">
+        <div class="small-box bg-primary">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.totalmessagecount</sup></h3>
+                <sup style="font-size:16px;color:white;  ">Toplam Mesaj Sayısı </sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="small-box bg-dark">
+            <div class="inner" style="text-align:center">
+                <br />
+                <h3><sup style="font-size:40px; color:white">@ViewBag.blogsheading</sup></h3>
+                <sup style="font-size:16px;color:white;  ">En Çok Yorum Alan Blog ID </sup>
+            </div>
+            <a class="small-box-footer"></a>
+        </div>
+    </div>
+</div>

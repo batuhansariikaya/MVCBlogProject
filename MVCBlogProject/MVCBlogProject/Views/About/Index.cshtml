@@ -1,0 +1,100 @@
+﻿@using MVCBlogProject.Models
+@model List<About>
+@{
+    ViewBag.Title = "Hakkımda";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+
+
+<!-- Page Content -->
+<!-- Banner Starts Here -->
+<div class="heading-page header-text">
+    <section class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-content">
+                        <h4>Hakkımda</h4>
+                        <h2>Daha fazlası</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Banner Ends Here -->
+<section class="call-to-action">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-content">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <span>CV</span>
+                            <h4>Buradan özgeçmişime ulaşabilirsiniz.</h4>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="main-button">
+                                <a href="~/Controllers/batuhansarikaya.pdf" target="_parent" download="batuhansarikaya.pdf">Şimdi İndir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-us">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="~/template/assets/images/about-us.jpg" alt="">
+                @foreach (var item in Model)
+                {
+                    <p>@item.AboutDescription </p>
+                }
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <h4>Eğitim</h4>
+                <p>İmam Hatip Lisesi mezunuyum. Ankara Medipol Üniversitesi <i>Bilgisayar Programcılığı</i> birinci sınıf öğrencisiyim.</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4>Projeler</h4>
+                <p>geliştirdiğim çok sayıda proje var. Yakında bunları da sitemde bulunan projeler kısmına ekleyeceğim beklemede kalın :)</p>
+            </div>
+            <div class="col-lg-4">
+                <h4>Hedefim</h4>
+                <p>Kendimi geliştirebildiğim kadar geliştirip sektördeki en iyi yazılımcı olmayı kendime hedef koydum ve bunu başaracağım!</p>
+            </div>
+        </div>
+
+
+       
+
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/batuhan.sarikaya.100"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/skunfuu"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/batuhansariikaya"><i class="fa fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/batuhan-sar%C4%B1kaya-6b9074195/"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</section>

@@ -1,0 +1,107 @@
+﻿@model MVCBlogProject.Models.MultipleClass
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<div class="heading-page header-text">
+
+</div>
+
+<!-- Banner Ends Here -->
+
+
+
+
+<section class="blog-posts grid-system">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="all-blog-posts">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="blog-post">
+                                @foreach (var item in Model.value1)
+                                {
+                                    <div class="blog-thumb">
+
+
+
+                                        <img src="@item.BlogImage" alt="">
+                                    </div>
+                                    <div class="down-content">
+                                        <span>@item.Category.CategoryName</span>
+                                        <a href="post-details.html"><h4>@item.BlogHeading</h4></a>
+                                        <ul class="post-info">
+                                            <li><a href="#">@item.AuthorName</a></li>
+                                            <li><a href="#">@item.Date.ToShortDateString()</a></li>
+
+                                        </ul>
+                                        <p>@Html.Raw(item.BlogDescription)</p>
+                                    </div>
+                                 }
+                            </div>
+
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="sidebar-item comments">
+                                    <div class="sidebar-heading">
+                                        <h2>Yorumlar</h2>
+                                    </div>
+                                    <div class="content">
+                                        @foreach (var item in Model.value2)
+                                        {
+                                            <ul>
+                                                <li>
+                                                    <div class="author-thumb">
+                                                        <img src="http://cdn.onlinewebfonts.com/svg/img_235552.png" alt="">
+                                                    </div>
+                                                    <div class="right-content">
+                                                        <h4>@item.CommentUserName</h4>
+                                                        <p>@item.Comments</p>
+
+                                                    </div>
+                                                </li>
+                                            </ul>
+
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="col-lg-12">
+                                    <div class="sidebar-item comments">
+                                        <div class="sidebar-heading">
+                                            <h2>Yorumlar</h2>
+                                        </div>
+                                        <div class="content">
+                                            <ul>
+                                                <li>
+                                                    <div class="author-thumb">
+                                                        <img src="assets/images/comment-author-01.jpg" alt="">
+                                                    </div>
+                                                    <div class="right-content">
+                                                        @foreach (var item in Model.value2)
+                                                        {
+
+
+                                                            <h4>@item.CommentUserName<span>May 16, 2020</span></h4>
+                                                            <p>@item.Comments</p>
+                                                        }
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            @Html.Action("Comment", "Main")
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
